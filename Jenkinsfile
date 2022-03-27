@@ -1,22 +1,22 @@
-pipeline {
-    agent none
-    stages {
-        stage('git pull') {
-            agent any
-            steps {
-                sh ''
-            }
-        }
-        stage('Front-end') {
-            agent {
-                docker { image 'node:16.13.1-alpine' }
-            }
-            steps {
-                sh 'node --version'
-            }
-        }
-    }
-}
+// pipeline {
+//     agent none
+//     stages {
+//         stage('git pull') {
+//             agent any
+//             steps {
+//                 sh ''
+//             }
+//         }
+//         stage('Front-end') {
+//             agent {
+//                 docker { image 'node:16.13.1-alpine' }
+//             }
+//             steps {
+//                 sh 'node --version'
+//             }
+//         }
+//     }
+// }
 
 
 pipeline {
