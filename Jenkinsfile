@@ -46,7 +46,7 @@ pipeline {
             steps {
                 script {
                     sh 'chmod 777 /var/lib/jenkins/workspace/source1code_master/target/*.jar'
-                    sh 'cd ~'
+                    sh 'cd /root'
                     sh 'pwd'
                     sh 'echo [hari] >> ~/.aws/credentials'
                     sh 'echo "[profile hari]" >> ~/.aws/credentials'
