@@ -36,6 +36,7 @@ pipeline {
         stage ('build pkg') {
             steps{
                 script {
+                    sh 'mvn -v'
                     sh 'mvn clean package'
                 }
             }
