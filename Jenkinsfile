@@ -46,7 +46,7 @@ pipeline {
             steps {
                 script {
                     sh 'pwd'
-                    sh 'chmod 777 /var/lib/jenkins/workspace/source1code_master/target/*.jar'
+                    sh 'chmod 777 /home/hari/.jenkins/workspace/source1code_master/target/*.jar'
                     sh 'sudo cd /root'
                     sh 'pwd'
                     sh 'sudo echo [hari] >> /root/.aws/credentials'
@@ -54,9 +54,9 @@ pipeline {
                     sh 'sudo echo "region = us-east-1" >> /root/.aws/credentials'
                     sh 'sudo echo "aws_access_key_id = AKIA6LM5JB2DCI662XV4" >> /root/.aws/credentials'
                     sh 'sudo echo "aws_secret_access_key = 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" >> /root/.aws/credentials'
-                    sh 'aws s3 cp /var/lib/jenkins/workspace/source1code_master/*/*.jar s3://hari220/spring1code --profile "hari"'
+                    sh 'aws s3 cp /home/hari/.jenkins/workspace/source1code_master/*/*.jar s3://hari220/spring1code --profile "hari"'
                     sh 'docker image ls'
-                    sh 'docker image build -i spring1code:hari /var/lib/jenkins/workspace/source1code_master/'
+                    sh 'docker image build -i spring1code:hari /home/hari/.jenkins/workspace/source1code_master'
                     sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 986561711750.dkr.ecr.us-east-1.amazonaws.com'
                     //  need to add tag
                     sh 'docker push 986561711750.dkr.ecr.us-east-1.amazonaws.com/jenkins'
