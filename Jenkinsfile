@@ -55,7 +55,7 @@ pipeline {
                     // sh 'sudo echo "aws_access_key_id = #################" >> /root/.aws/credentials'
                     // sh 'sudo echo "aws_secret_access_key = ##############################" >> /root/.aws/credentials'
                     // sh 'aws s3 cp /home/hari/.jenkins/workspace/source1code_master/*/*.jar s3://hari220/spring1code --profile "hari"'
-                    sh 'aws s3 cp /home/hari/.jenkins/workspace/source1code_master/*/*.jar s3://hari220/spring1code'
+                    sh 'sudo aws s3 cp /home/hari/.jenkins/workspace/source1code_master/*/*.jar s3://hari220/spring1code'
                     sh 'docker image ls'
                     sh 'docker image build -i spring1code:hari /home/hari/.jenkins/workspace/source1code_master'
                     sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 986561711750.dkr.ecr.us-east-1.amazonaws.com'
