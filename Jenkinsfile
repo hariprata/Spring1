@@ -21,6 +21,11 @@
 
 pipeline {
     agent any
+
+    tools {
+        maven 'Maven 3.8.5'
+        jdk 'jdk11'
+    }
     environment {
         registry = "acct_id.dkr.ecr.us-east-1.amazonaws.com/harispring"
     }
