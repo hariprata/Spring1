@@ -45,7 +45,7 @@ pipeline {
             steps {
                 script {
                     sh 'chmod 777 /var/lib/jenkins/workspace/spring1code_master/*/*.jar'
-                    sh 'aws s3 cp /var/lib/jenkins/workspace/spring1code_master/*/*.jar s3://hari220/spring1code'
+                    sh 'aws s3 cp /var/lib/jenkins/workspace/spring1code_master/*/*.jar s3://hari220/spring1code --profile "hari"'
                 }
             }
         }
