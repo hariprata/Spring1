@@ -46,11 +46,11 @@ pipeline {
             steps {
                 script {
                     sh 'chmod 777 /var/lib/jenkins/workspace/source1code_master/target/*.jar'
-                    sh 'aws configure --profile "hari"'
-                    sh 'AKIA6LM5JB2DCI662XV4'
-                    sh 'awRevxohOutIH+7W/Kuh0AQeCQHlJAz7Zx4oA97X'
-                    sh 'us-east-1'
-                    sh ''
+                    sh 'echo [hari] >> ~/.aws/credentials'
+                    sh 'echo "[profile hari]"  ~/.aws/credentials'
+                    sh 'echo "region = us-east-1" ~/.aws/credentials'
+                    sh 'echo "aws_access_key_id = AKIA6LM5JB2DCI662XV4" ~/.aws/credentials'
+                    sh 'echo "aws_secret_access_key = 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" ~/.aws/credentials'
                     sh 'aws s3 cp /var/lib/jenkins/workspace/source1code_master/*/*.jar s3://hari220/spring1code --profile "hari"'
                     sh 'docker image ls'
                     sh 'docker image build -i spring1code:hari .'
