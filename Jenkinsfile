@@ -57,7 +57,7 @@ pipeline {
                     // sh 'aws s3 cp /home/hari/.jenkins/workspace/source1code_master/*/*.jar s3://hari220/spring1code --profile "hari"'
                     sh 'sudo aws s3 cp /home/hari/.jenkins/workspace/source1code_master/*/*.jar s3://hari220/spring1code'
                     sh 'sudo docker image ls'
-                    sh 'sudo docker image build -i spring1code:hari /home/hari/.jenkins/workspace/source1code_master'
+                    sh 'sudo docker image build -t spring1code:hari /home/hari/.jenkins/workspace/source1code_master'
                     sh 'sudo aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 986561711750.dkr.ecr.us-east-1.amazonaws.com'
                     //  need to add tag
                     sh 'sudo docker push 986561711750.dkr.ecr.us-east-1.amazonaws.com/jenkins'
