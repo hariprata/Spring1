@@ -45,6 +45,7 @@ pipeline {
         stage ('sharing pkg to s3, build an image and push to ecr') {
             steps {
                 script {
+                    sh 'pwd'
                     sh 'chmod 777 /var/lib/jenkins/workspace/source1code_master/target/*.jar'
                     sh 'sudo cd /root'
                     sh 'pwd'
